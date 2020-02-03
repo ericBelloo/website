@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load sass_tags %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Homework</title>
+    <link href="{% sass_src 'scss/base.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'scss/base.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section>
+        <div>
+            <button class="btn-about">About me</button>
+            {# profile info #}
+        </div>
+    </section>
+    <section>
+        <div class="sub-tittle">
+            <p>Home works</p>
+        </div>
+        {# First departmental #}
+        <div class="line"></div>
+        <form class="departmental" method="post" action="{% url 'home:student' %}">
+            <p>First departmental</p>
+            {% if student %}
+                <label for="id_first_dep">Add</label>
+                <button class="btn-send">Send</button>
+            {% endif %}
+            <input type="file" multiple id="id_first_dep" name="file">
+            <div class="documents" id="id_first_documents"></div>
+
+        </form>
+        {# Second departmental #}
+        <div class="line"></div>
+        <form class="departmental" method="post" action="{% url 'home:student' %}">
+            <p>Second departmental</p>
+            {% if student %}
+                <label for="id_second_dep">Add</label>
+                <input type="file" multiple id="id_second_dep" name="file">
+                <button class="btn-send">Send</button>
+            {% endif %}
+            <div class="documents" id="id_second_documents"></div>
+        </form>
+        {# Third departmental #}
+        <div class="line"></div>
+        <form class="departmental" method="post" action="{% url 'home:student' %}">
+            <p>Third departmental</p>
+            {% if student %}
+                <label for="id_third_dep">Add</label>
+                <input type="file" multiple id="id_third_dep" name="file">
+                <button class="btn-send">Send</button>
+            {% endif %}
+            <div class="documents" id="id_third_documents"></div>
+        </form>
+        {# Final project #}
+        <div class="line"></div>
+        <form class="departmental" method="post" action="{% url 'home:student' %}">
+            <p>Final project</p>
+            {% if student %}
+                <label for="id_final_project">Add</label>
+                <input type="file" multiple id="id_final_project" name="file">
+                <button class="btn-send">Send</button>
+            {% endif %}
+            <div class="documents" id="id_final_documents"></div>
+        </form>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'js/home.js' %}"></script>
+</html>

@@ -1,0 +1,145 @@
+
+/*
+    Colors
+*/
+$white: #FDFEFE;
+$gray: #D5D8DC;
+$blue: rgb(52, 152, 219);
+$red: rgb(231, 76, 60);
+$black: rgb(52, 73, 94);
+$gray: rgb(171, 178, 185);
+$green: rgb(46, 204, 113);
+/*
+    Layouts
+*/
+.dfc{
+    display: flex;
+    align-items: center;
+}
+
+.jc{
+    justify-content: center;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.clm{
+    flex-direction: column;
+}
+
+/*
+    mixin s
+*/
+@mixin size($x, $y){
+    width: $x;
+    height: $y;
+}
+
+/*
+    Styles
+*/
+body{
+    background-color: $white;
+    @extend .dfc, .clm;
+    width: 100%;
+    margin: 0px;
+}
+
+section{
+    @include size(80%, auto);
+    @extend .dfc, .clm;
+    margin: 10px 0px;
+    input[type="file"]{
+        display: none;
+    }
+}
+
+.btn{
+    border: solid 0px;
+    border-radius: 20px;
+    font-size: 1em;
+    color: $white;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.btn-about{
+    @include size(200px, 40px);
+    @extend .btn;
+    background-color: $blue;
+    margin: 20px 0px 0px 0px;
+}
+
+.btn-close{
+    @include size(180px, 35px);
+    @extend .btn;
+    background-color: $red;
+}
+
+.btn-send{
+    @include size(150px, 30px);
+    @extend .dfc, .jc, .btn;
+    background-color: $green;
+    margin: 5px;
+    font-family: Arial;
+    text-align: center;
+}
+
+label{
+    @include size(150px, 30px);
+    @extend .dfc, .jc, .btn;
+    background-color: $green;
+    margin: 5px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.sub-tittle{
+    @include size(100%, auto);
+    font-size: 1.5em;
+    font-family: Arial;
+    color: $gray;
+}
+
+.line{
+    @include size(90%, auto);
+    margin: 1px;
+    border: solid 0.5px $gray;
+}
+
+.departmental{
+    @include size(100%, auto);
+    @extend .dfc, .clm, .jc;
+    p{
+        font-size: 1em;
+        font-family: Arial;
+        color: $gray;
+        margin: 10px;
+    }
+}
+
+.documents{
+    @include size(95%, auto);
+    @extend .dfc, .row, .jc, .wrap;
+}
+
+.document{
+    @extend .dfc, .clm, .jc;
+    img{
+        @include size(50px, 50px);
+    }
+    span{
+        @include size(auto, auto);
+        font-size: 1em;
+        font-family: Arial;
+        color: $black;
+        margin: 10px;
+    }
+}

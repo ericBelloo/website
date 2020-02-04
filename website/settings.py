@@ -137,4 +137,7 @@ STATICFILES_FINDERS = [
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
 
 # documents files (docx, pdf)
-DOCUMENTS = os.path.join(BASE_DIR, 'document')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+DOCUMENTS = MEDIA_ROOT + '/documents'

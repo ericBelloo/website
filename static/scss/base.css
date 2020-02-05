@@ -4,11 +4,11 @@
 /*
     Layouts
 */
-.dfc, .document, .documents, .departmental, label, .btn-send, section, body {
+.dfc, .document, .documents, .departmental, label, .btn-send, .about-me, section, body {
   display: flex;
   align-items: center; }
 
-.jc, .document, .documents, .departmental, label, .btn-send {
+.jc, .document, .documents, .departmental, label, .btn-send, .about-me {
   justify-content: center; }
 
 .wrap, .documents {
@@ -17,7 +17,7 @@
 .row, .documents {
   flex-direction: row; }
 
-.clm, .document, .departmental, section, body {
+.clm, .document, .departmental, .about-me, section, body {
   flex-direction: column; }
 
 /*
@@ -38,6 +38,22 @@ section {
   section input[type="file"] {
     display: none; }
 
+.about-me {
+  width: 300px;
+  height: auto;
+  padding: 20px 0px;
+  margin: 20px 0px;
+  border: 1px solid #abb2b9;
+  border-radius: 20px; }
+  .about-me img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; }
+  .about-me p {
+    margin: 10px;
+    font-family: arial;
+    color: #34495e; }
+
 .btn, label, .btn-send, .btn-close, .btn-about {
   border: solid 0px;
   border-radius: 20px;
@@ -50,7 +66,8 @@ section {
   width: 200px;
   height: 40px;
   background-color: #3498db;
-  margin: 20px 0px 0px 0px; }
+  margin: 20px 0px 0px 0px;
+  outline: none; }
 
 .btn-close {
   width: 180px;

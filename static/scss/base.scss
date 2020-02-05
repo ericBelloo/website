@@ -60,6 +60,24 @@ section{
     }
 }
 
+.about-me{
+    @include size(300px, auto);
+    @extend .dfc, .jc, .clm;
+    padding: 20px 0px;
+    margin: 20px 0px;
+    border: 1px solid $gray;
+    border-radius: 20px;
+    img{
+        @include size(150px, 150px);
+        border-radius: 50%
+    }
+    p{
+        margin: 10px;
+        font-family: arial;
+        color: $black;
+    }
+}
+
 .btn{
     border: solid 0px;
     border-radius: 20px;
@@ -75,6 +93,7 @@ section{
     @extend .btn;
     background-color: $blue;
     margin: 20px 0px 0px 0px;
+    outline:none;
 }
 
 .btn-close{

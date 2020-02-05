@@ -11,3 +11,4 @@ class Documents(models.Model):
     departmental = models.SmallIntegerField(blank=True, null=True)
     update_at = models.DateField(auto_now=True)
     create_at = models.DateField(auto_now=True)
+

@@ -141,3 +141,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 DOCUMENTS = MEDIA_ROOT + '/documents'
+IMAGES = MEDIA_ROOT + '/images'

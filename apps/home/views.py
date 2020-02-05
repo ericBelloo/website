@@ -16,6 +16,7 @@ class StudentListView(View):
         context['first_dep'] = self.model.objects.filter(departmental=1)
         context['second_dep'] = self.model.objects.filter(departmental=2)
         context['third_dep'] = self.model.objects.filter(departmental=3)
+        context['final_project'] = self.model.objects.filter(departmental=4)
         return render(request, self.template_name, context)
 
     def post(self, request, **kwargs):
@@ -42,4 +43,5 @@ class TeacherListView(ListView):
         context['first_dep'] = self.model.objects.filter(departmental=1)
         context['second_dep'] = self.model.objects.filter(departmental=2)
         context['third_dep'] = self.model.objects.filter(departmental=3)
+        context['final_project'] = self.model.objects.filter(departmental=4)
         return context

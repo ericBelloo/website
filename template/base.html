@@ -7,24 +7,27 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <title>Homework</title>
     <link href="{% static 'scss/base.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'scss/base.scss' %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    {# About me #}
     <section>
-            <button class="btn-about" id="btn_about">About me</button>
-            <div class="about-me" id="about_me">
-                <img src="{% static 'img/profile_eric.jpg' %}">
-                    <p>Estudiante de ingeniería informatica apacionado por
-                        la programación y el arte
-                    </p>
-            </div>
+        <button class="btn-about " id="btn_about">About me</button>
+        <div class="about-me dn" id="about_me">
+            <img src="{% static 'img/profile_eric.jpg' %}">
+            <p>Estudiante de ingeniería informatica apacionado por
+                la programación y el arte
+            </p>
+        </div>
     </section>
+    {# Investigations #}
     <section>
         <div class="sub-tittle">
-            <p>Home works</p>
+            <p>Investigations</p>
         </div>
+        <div class="line-section"></div>
         {# First departmental #}
-        <div class="line"></div>
-        <form class="departmental" method="post" action="{% url 'home:student' %}" id="form_first">
+        <form class="departmental" method="post" action="{% url 'home:save_departmental' %}" id="form_first">
             {% csrf_token %}
             <p>First departmental</p>
             {% if student %}
@@ -43,8 +46,7 @@
             </div>
         </form>
         {# Second departmental #}
-        <div class="line"></div>
-        <form class="departmental" method="post" action="{% url 'home:student' %}" id="form_second">
+        <form class="departmental" method="post" action="{% url 'home:save_departmental' %}" id="form_second">
             {% csrf_token %}
             <p>Second departmental</p>
             {% if student %}
@@ -63,8 +65,7 @@
             </div>
         </form>
         {# Third departmental #}
-        <div class="line"></div>
-        <form class="departmental" method="post" action="{% url 'home:student' %}" id="form_third">
+        <form class="departmental" method="post" action="{% url 'home:save_departmental' %}" id="form_third">
             {% csrf_token %}
             <p>Third departmental</p>
             {% if student %}
@@ -82,11 +83,39 @@
                 {% endfor %}
             </div>
         </form>
-        {# Final project #}
-        <div class="line"></div>
-        <form class="departmental" method="post" action="{% url 'home:student' %}" id="form_project">
+    </section>
+    {# Practices #}
+    <section>
+        <div class="sub-tittle">
+            <p>Practices</p>
+        </div>
+        <div class="line-section"></div>
+        <form class="departmental" method="post" action="{% url 'home:save_practices' %}" id="form_practices">
             {% csrf_token %}
-            <p>Final project</p>
+            {% if student %}
+                <label for="id_practices">Add</label>
+                <input type="file" multiple id="id_practices" name="file">
+                <button type="button" class="btn-send" id="btn_practices">Send</button>
+            {% endif %}
+            <div class="documents" id="id_practices_documents">
+                {% for document in practices %}
+                    <div class="document">
+                        <a href="/media/practices/{{ document.name }}"> <img src="{% static 'img/word.svg' %}" > </a>
+                        <span>{{ document.name }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </form>
+    </section>
+    {# Final project #}
+    <section>
+        <div class="sub-tittle">
+            <p>Final Project</p>
+        </div>
+        <div class="line-section"></div>
+        {# Final project #}
+        <form class="departmental" method="post" action="{% url 'home:save_departmental' %}" id="form_project">
+            {% csrf_token %}
             {% if student %}
                 <input type="hidden" id="id_project_departmental" name="departmental" value="4">
                 <label for="id_final_project">Add</label>

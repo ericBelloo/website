@@ -1,13 +1,15 @@
 
 $(document).ready(function(){
-    $('#about_me').hide();
+    //$('#about_me').hide();
 });
 
 $('#btn_about').click(function(){
     if ($('#about_me').is(':visible')) {
-        $('#about_me').hide();
+        $('#about_me').addClass('dn');
+        console.log('add');
     } else {
-        $('#about_me').show();
+        console.log('remove');
+        $('#about_me').removeClass('dn');
     }
 });
 
@@ -28,7 +30,11 @@ $(document).change(function(evt){
             AppendDocument('#id_third_documents', files);
         break;
         case 'id_final_project':
-            AppendDocument('#id_final_project', files);
+            AppendDocument('#id_final_documents', files);
+        break;
+        case 'id_practices':
+            console.log('here');
+            AppendDocument('#id_practices_documents', files);
         break;
     }
 });
@@ -51,21 +57,20 @@ $(document).click(function(evt){
     let element = evt.target.id;
     switch(element){
         case 'btn_first':
-            console.log('first');
             SendForm($('#form_first'));
         break;
         case 'btn_second':
-            console.log('second');
             SendForm($('#form_second'));
         break;
         case 'btn_third':
-            console.log('third');
             SendForm($('#form_third'));
         break;
         case 'btn_project':
-            console.log('project');
             SendForm($('#form_project'));
         break;
+        case 'btn_practices':
+            SendForm($('#form_practices'));
+         break;
     }
 });
 

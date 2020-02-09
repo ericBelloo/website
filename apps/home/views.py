@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.generic import View, ListView
-from apps.model.models import Documents
+from apps.model.models import Documents, Practices
 # Create your views here.
 data = dict()
 
@@ -17,21 +17,35 @@ class StudentListView(View):
         context['second_dep'] = self.model.objects.filter(departmental=2)
         context['third_dep'] = self.model.objects.filter(departmental=3)
         context['final_project'] = self.model.objects.filter(departmental=4)
+        context['practices'] = Practices.objects.all()
         return render(request, self.template_name, context)
 
-    def post(self, request, **kwargs):
-        files = request.FILES.getlist('file')
-        departmental = int(request.POST.get('departmental'), False)
-        if departmental:
-            for file in files:
-                document = Documents.objects.create(name=file.name, file=file, departmental=departmental)
-                document.save()
-        data['success'] = True
-        data['message'] = 'The information has been saved correctly'
-        return JsonResponse(data)
+
+def save_departmental(request):
+    files = request.FILES.getlist('file')
+    departmental = int(request.POST.get('departmental'))
+    for file in files:
+        document = Documents.objects.create(name=file.name, file=file, departmental=departmental)
+        document.save()
+    data['success'] = True
+    data['message'] = 'The information has been saved correctly'
+    return JsonResponse(data)
+
+
+def save_practices(request):
+    files = request.FILES.getlist('file')
+    for file in files:
+        document = Practices.objects.create(name=file.name, file=file)
+        document.save()
+    data['success'] = True
+    data['message'] = 'The information has been saved correctly'
+    return JsonResponse(data)
 
 
 class TeacherListView(ListView):
+    """
+        The teacher just can see the documents
+    """
     template_name = 'base.html'
     model = Documents
 
@@ -44,4 +58,5 @@ class TeacherListView(ListView):
         context['second_dep'] = self.model.objects.filter(departmental=2)
         context['third_dep'] = self.model.objects.filter(departmental=3)
         context['final_project'] = self.model.objects.filter(departmental=4)
+        context['practices'] = Practices.objects.all()
         return context

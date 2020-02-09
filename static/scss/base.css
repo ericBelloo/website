@@ -20,6 +20,9 @@
 .clm, .document, .departmental, .about-me, section, body {
   flex-direction: column; }
 
+.dn {
+  display: none; }
+
 /*
     mixin s
 */
@@ -98,7 +101,13 @@ label {
   color: #abb2b9; }
 
 .line {
-  width: 90%;
+  width: 80%;
+  height: auto;
+  margin: 1px;
+  border: solid 0.5px #abb2b9; }
+
+.line-section {
+  width: 100%;
   height: auto;
   margin: 1px;
   border: solid 0.5px #abb2b9; }

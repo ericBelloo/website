@@ -33,6 +33,10 @@ $green: rgb(46, 204, 113);
     flex-direction: column;
 }
 
+.dn{
+    display: none;
+}
+
 /*
     mixin s
 */
@@ -128,7 +132,13 @@ label{
 }
 
 .line{
-    @include size(90%, auto);
+    @include size(80%, auto);
+    margin: 1px;
+    border: solid 0.5px $gray;
+}
+
+.line-section{
+    @include size(100%, auto);
     margin: 1px;
     border: solid 0.5px $gray;
 }

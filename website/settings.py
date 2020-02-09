@@ -143,4 +143,6 @@ MEDIA_URL = '/media/'
 
 
 DOCUMENTS = MEDIA_ROOT + '/documents'
+PRACTICES = MEDIA_ROOT + '/practices'
 IMAGES = MEDIA_ROOT + '/images'
+

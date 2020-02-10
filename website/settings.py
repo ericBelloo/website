@@ -122,10 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-#  STATIC_ROOT = os.path.join(BASE_DIR, "static") #  web
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+#]
 
 # Sass files (Scss)
 STATICFILES_FINDERS = [
@@ -142,7 +143,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-DOCUMENTS = MEDIA_ROOT + '/documents'
-PRACTICES = MEDIA_ROOT + '/practices'
-IMAGES = MEDIA_ROOT + '/images'
-
+DOCUMENTS = 'documents'
+PRACTICES = 'practices'
+IMAGES = 'images'

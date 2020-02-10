@@ -39,7 +39,7 @@
             <div class="documents" id="id_first_documents">
                 {% for document in first_dep %}
                     <div class="document">
-                        <a href="/media/documents/{{ document.name }}"> <img src="{% static 'img/word.svg' %}" > </a>
+                        <a href="{{ document.file.url }}"> <img src="{% static 'img/word.svg' %}" > </a>
                         <span>{{ document.name }}</span>
                     </div>
                 {% endfor %}
@@ -58,7 +58,7 @@
             <div class="documents" id="id_second_documents">
                 {% for document in second_dep %}
                     <div class="document">
-                        <a href="/media/documents/{{ document.name }}"> <img src="{% static 'img/word.svg' %}" > </a>
+                        <a href="{{ document.file.url }}"> <img src="{% static 'img/word.svg' %}" > </a>
                         <span>{{ document.name }}</span>
                     </div>
                 {% endfor %}
@@ -77,7 +77,7 @@
             <div class="documents" id="id_third_documents">
                 {% for document in third_dep %}
                     <div class="document">
-                        <a href="/media/documents/{{ document.name }}"> <img src="{% static 'img/word.svg' %}" > </a>
+                        <a href="{{ document.file.url }}"> <img src="{% static 'img/word.svg' %}" > </a>
                         <span>{{ document.name }}</span>
                     </div>
                 {% endfor %}
@@ -100,7 +100,7 @@
             <div class="documents" id="id_practices_documents">
                 {% for document in practices %}
                     <div class="document">
-                        <a href="/media/practices/{{ document.name }}"> <img src="{% static 'img/word.svg' %}" > </a>
+                        <a href="{{ document.file.url }}"> <img src="{% static 'img/word.svg' %}" > </a>
                         <span>{{ document.name }}</span>
                     </div>
                 {% endfor %}

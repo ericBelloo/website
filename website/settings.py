@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z2flc*vuy139n!ubrz0+3lv61tew9=6zw=h_14f=ddz_s8xmbw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # my apps
-    'sass_processor',
+    'django_sass',
     'apps.model',
     'apps.home',
 ]
@@ -121,28 +121,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, "static"),
-#]
-
-# Sass files (Scss)
-STATICFILES_FINDERS = [
-     'django.contrib.staticfiles.finders.FileSystemFinder',
-     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-     'sass_processor.finders.CssFinder',
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/static/',
 ]
 
-# Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
-
-# documents files (docx, pdf)
+# documents files (docx, pdf, images)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
 
 DOCUMENTS = 'documents'
 PRACTICES = 'practices'
 IMAGES = 'images'
+PROJECT = 'project'
+

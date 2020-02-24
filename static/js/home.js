@@ -6,9 +6,7 @@ $(document).ready(function(){
 $('#btn_about').click(function(){
     if ($('#about_me').is(':visible')) {
         $('#about_me').addClass('dn');
-        console.log('add');
     } else {
-        console.log('remove');
         $('#about_me').removeClass('dn');
     }
 });

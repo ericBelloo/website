@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Aplicación de Redes</title>
+    <link href="{% static 'css/new_homework.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section>
+        <form method="post" action="#">
+            {% csrf_token %}
+            <input type="text" name="title" id="id_tittle" placeholder="Title">
+            <textarea class="new-content" placeholder="Content"></textarea>
+        </form>
+        <div>
+            <button class="btn-mod" id="add_text">ADD TEXT</button>
+            <label for="id_file">
+                <span class="span-mode" id="add_image">ADD IMAGE</span>
+            </label>
+            <input type="file" name="file" id="id_file" data-url="{% url 'home:save_image' %}" accept="image/*">
+        </div>
+        <button class="btn-save" id="btn_save">SAVE</button>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'js/new_homework.js' %}"></script>
+</html>

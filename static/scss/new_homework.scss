@@ -1,0 +1,78 @@
+@import 'base.scss';
+
+section{
+    @include size(100%, auto);
+    @extend .dfc, .clm;
+}
+
+form{
+    @include size(60%, auto);
+    @extend .dfc, .clm;
+    input[type="text"]{
+        @include size(100%, 50px);
+        margin: 10px 0px;
+        padding: 0px 15px;
+        border: 1px solid $gray;
+        border-style: dashed;
+        border-radius: 15px;
+        font-size: 1em;
+        color: $black;
+        outline: 0px;
+    }
+    textarea{
+        @include size(100%, 50px);
+        margin: 10px 0px;
+        padding: 15px;
+        border: 1px solid $gray;
+        border-style: dashed;
+        border-radius: 15px;
+        font-size: 1em;
+        font-family: Arial;
+        color: $black;
+        outline: 0px;
+        resize: none;
+    }
+    @media screen and (max-device-width : 480px) {
+        @include size(90%, 50px);
+    }
+}
+
+input[type='file']{
+    display: none;
+}
+
+.btn-mod{
+    @include size(100px, 40px);
+    margin: 20px 2px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: $blue;
+    color: $white;
+    outline: 0px;
+    font-family: Arial;
+    font-size: 1em;
+}
+
+.span-mode{
+    @include size(100px, 40px);
+    margin: 20px 2px;
+    padding: 12px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: $blue;
+    color: $white;
+    outline: 0px;
+    font-family: Arial;
+    font-size: 1em;
+}
+
+.btn-save{
+    @include size(100px, 40px);
+    margin: 20px 2px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: $green;
+    color: $white;
+    outline: 0px;
+}

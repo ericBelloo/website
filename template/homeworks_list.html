@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/homeworks.css' %}">
+  <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+  <!-- Demo styles -->
+
+</head>
+<body>
+  <!-- Swiper -->
+  <header>
+    <div class="tab">
+      <label>Investigations</label>
+      <label>Practices</label>
+      <label>Project</label>
+    </div>
+  </header>
+  <section>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {# Investigations #}
+        <div class="swiper-slide">
+          <div class="content">
+            <label>First departmental</label>
+            <div class="list">
+                {% for object in first_departmental %}
+                    <span data-id="{{ object.id }}">{{ object.title }}</span>
+                {% endfor %}
+            </div>
+            <label>Second departmental</label>
+            <div class="list">
+                {% for object in second_departmental %}
+                    <span data-id="{{ object.id }}">{{ object.title }}</span>
+                {% endfor %}
+            </div>
+            <label>Third departmental</label>
+            <div class="list">
+                {% for object in third_departmental %}
+                    <span data-id="{{ object.id }}">{{ object.title }}</span>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+        {# Practices #}
+        <div class="swiper-slide">
+          <div class="content">
+            <label>First departmental</label>
+            <label>Second departmental</label>
+            <label>Third departmental</label>
+          </div>
+        </div>
+        {# Project #}
+        <div class="swiper-slide">
+          <div class="content">
+            <label>Project</label>
+          </div>
+        </div>
+      </div>
+    <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+  </div>
+  </section>
+</body>
+  <!-- Swiper JS -->
+  <script src="{% static 'js/swiper.min.js' %}"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</html>

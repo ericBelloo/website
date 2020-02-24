@@ -1,0 +1,236 @@
+/*
+    Colors
+*/
+/*
+    Layouts
+*/
+.dfc, .content, .document, .documents, .departmental, .btn-send, .about-me, section, .tab label, .tab, header, body {
+  display: flex;
+  align-items: center;
+}
+
+.jc, .document, .documents, .departmental, .btn-send, .about-me, .tab label, .tab, header {
+  justify-content: center;
+}
+
+.wrap, .documents {
+  flex-wrap: wrap;
+}
+
+.row, .documents, .tab {
+  flex-direction: row;
+}
+
+.clm, .content, .document, .departmental, .about-me, section, body {
+  flex-direction: column;
+}
+
+.dn {
+  display: none;
+}
+
+/*
+    mixin s
+*/
+body {
+  background-color: #FDFEFE;
+  width: 100%;
+  margin: 0px;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+}
+
+.tab {
+  width: 50%;
+  height: 40px;
+  background: #FDFEFE;
+  border: 1px solid #abb2b9;
+  border-radius: 15px;
+}
+
+.tab label {
+  width: 33.33%;
+  height: 100%;
+  font-family: Arial;
+  text-align: center;
+  color: #34495e;
+}
+
+.tab label :hover {
+  background: #abb2b9;
+}
+
+@media screen and (max-device-width: 480px) {
+  .tab {
+    width: 95%;
+    height: 40px;
+  }
+}
+
+section {
+  width: 100%;
+  height: auto;
+  margin: 10px 0px;
+}
+
+section input[type="file"] {
+  display: none;
+}
+
+.about-me {
+  width: 500px;
+  height: auto;
+  padding: 20px 0px;
+  margin: 20px 0px;
+  border: 1px solid #abb2b9;
+  border-radius: 20px;
+}
+
+.about-me img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.about-me p {
+  margin: 10px;
+  font-family: arial;
+  color: #34495e;
+}
+
+.btn, .btn-send, .btn-close, .btn-about {
+  border: solid 0px;
+  border-radius: 20px;
+  font-size: 1em;
+  color: #FDFEFE;
+}
+
+.btn:hover, .btn-send:hover, .btn-close:hover, .btn-about:hover {
+  cursor: pointer;
+}
+
+.btn-about {
+  width: 200px;
+  height: 40px;
+  background-color: #3498db;
+  margin: 20px 0px 0px 0px;
+  outline: none;
+}
+
+.btn-close {
+  width: 180px;
+  height: 35px;
+  background-color: #e74c3c;
+}
+
+.btn-send {
+  width: 150px;
+  height: 30px;
+  background-color: #2ecc71;
+  margin: 5px;
+  font-family: Arial;
+  text-align: center;
+}
+
+/*
+label{
+    @include size(150px, 30px);
+    @extend .dfc, .jc, .btn;
+    background-color: $green;
+    margin: 5px;
+    font-family: Arial;
+    text-align: center;
+}
+*/
+.sub-tittle {
+  width: 100%;
+  height: auto;
+  font-size: 1.5em;
+  font-family: Arial;
+  color: #abb2b9;
+}
+
+.line {
+  width: 80%;
+  height: auto;
+  margin: 2px;
+  border: solid 0.5px #abb2b9;
+}
+
+.departmental {
+  width: 100%;
+  height: auto;
+}
+
+.departmental p {
+  font-size: 1em;
+  font-family: Arial;
+  color: #abb2b9;
+  margin: 10px;
+}
+
+.documents {
+  width: 95%;
+  height: auto;
+}
+
+.document img {
+  width: 50px;
+  height: 50px;
+}
+
+.document span {
+  width: auto;
+  height: auto;
+  font-size: 1em;
+  font-family: Arial;
+  color: #34495e;
+  margin: 10px;
+}
+
+.content {
+  width: 90%;
+  height: auto;
+}
+
+.content label {
+  width: 200px;
+  height: 20px;
+  background-color: #f8f9f9;
+  padding: 5px 5px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-family: Arial;
+  color: #566573;
+  margin: 10px 0px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=../css/homeworks.css.map */

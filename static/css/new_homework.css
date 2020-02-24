@@ -1,0 +1,123 @@
+/*
+    Colors
+*/
+/*
+    Layouts
+*/
+.dfc, form, section {
+  display: flex;
+  align-items: center;
+}
+
+.jc {
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.clm, form, section {
+  flex-direction: column;
+}
+
+.dn {
+  display: none;
+}
+
+/*
+    mixin s
+*/
+section {
+  width: 100%;
+  height: auto;
+}
+
+form {
+  width: 60%;
+  height: auto;
+}
+
+form input[type="text"] {
+  width: 100%;
+  height: 50px;
+  margin: 10px 0px;
+  padding: 0px 15px;
+  border: 1px solid #abb2b9;
+  border-style: dashed;
+  border-radius: 15px;
+  font-size: 1em;
+  color: #34495e;
+  outline: 0px;
+}
+
+form textarea {
+  width: 100%;
+  height: 50px;
+  margin: 10px 0px;
+  padding: 15px;
+  border: 1px solid #abb2b9;
+  border-style: dashed;
+  border-radius: 15px;
+  font-size: 1em;
+  font-family: Arial;
+  color: #34495e;
+  outline: 0px;
+  resize: none;
+}
+
+@media screen and (max-device-width: 480px) {
+  form {
+    width: 90%;
+    height: 50px;
+  }
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.btn-mod {
+  width: 100px;
+  height: 40px;
+  margin: 20px 2px;
+  padding: 10px;
+  border: 0px;
+  border-radius: 15px;
+  background-color: #3498db;
+  color: #FDFEFE;
+  outline: 0px;
+  font-family: Arial;
+  font-size: 1em;
+}
+
+.span-mode {
+  width: 100px;
+  height: 40px;
+  margin: 20px 2px;
+  padding: 12px;
+  border: 0px;
+  border-radius: 15px;
+  background-color: #3498db;
+  color: #FDFEFE;
+  outline: 0px;
+  font-family: Arial;
+  font-size: 1em;
+}
+
+.btn-save {
+  width: 100px;
+  height: 40px;
+  margin: 20px 2px;
+  border: 0px;
+  border-radius: 15px;
+  background-color: #2ecc71;
+  color: #FDFEFE;
+  outline: 0px;
+}
+
+/*# sourceMappingURL=../css/new_homework.css.map */

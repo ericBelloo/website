@@ -12,24 +12,25 @@ header{
     @extend .dfc, .jc;
 }
 
+footer{
+    @extend .dfc, .clm;
+}
+
 .tab{
     @include size(50%, 40px);
     @extend .dfc, .jc, .row;
     background: $white;
     border: 1px solid $gray;
     border-radius: 15px;
-    label{
-        @include size(33.33%, 100%);
-        @extend .dfc, .jc;
+    margin: 10px 0px 50px 0px;
+
+    span{
         font-family: Arial;
         text-align: center;
         color: $black;
-        :hover{
-            background: $gray;
-        }
     }
     @media screen and (max-device-width : 480px) {
-        @include size(95%, 40px);
+        @include size(60%, 40px);
     }
 }
 
@@ -42,7 +43,7 @@ section{
     }
 }
 
-.about-me{
+.about{
     @include size(500px, auto);
     @extend .dfc, .jc, .clm;
     padding: 20px 0px;
@@ -57,6 +58,9 @@ section{
         margin: 10px;
         font-family: arial;
         color: $black;
+    }
+    @media screen and (max-device-width: 480px){
+        @include size(90%, auto);
     }
 }
 
@@ -81,7 +85,9 @@ section{
 .btn-close{
     @include size(180px, 35px);
     @extend .btn;
+    margin: 10px 0px;
     background-color: $red;
+    outline:none;
 }
 
 .btn-send{
@@ -91,6 +97,7 @@ section{
     margin: 5px;
     font-family: Arial;
     text-align: center;
+    outline:none;
 }
 
 /*
@@ -112,9 +119,9 @@ label{
 }
 
 .line{
-    @include size(80%, auto);
-    margin: 2px;
-    border: solid 0.5px $gray;
+    @include size(70%, 1px);
+    margin: 5px;
+    background-color: $gray;
 }
 
 .departmental{
@@ -149,17 +156,19 @@ label{
 
 .content{
     @include size(90%, auto);
+    min-height: 500px;
     @extend .dfc, .clm;
-
-    label{
-        @include size(200px, 20px);
-        background-color: rgb(248, 249, 249);
-        padding: 5px 5px;
-        border-radius: 15px;
-        font-size: 0.9em;
+    span{
         font-family: Arial;
-        color: rgb(86, 101, 115);
-        margin: 10px 0px;
+        font-size: 1em;
+        color: $black;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    a{
+        margin: 10px;
+        text-decoration:none;
     }
 }
 

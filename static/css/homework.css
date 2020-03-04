@@ -1,0 +1,66 @@
+/*
+    Colors
+*/
+/*
+    Layouts
+*/
+.dfc, section, body {
+  display: flex;
+  align-items: center;
+}
+
+.jc {
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.clm, section, body {
+  flex-direction: column;
+}
+
+.dn {
+  display: none;
+}
+
+/*
+    mixin s
+*/
+section {
+  width: 70%;
+  height: auto;
+}
+
+section h1 {
+  font-family: Arial;
+  color: #34495e;
+  font-size: 2em;
+}
+
+section p {
+  font-family: Arial;
+  color: #34495e;
+  font-size: 1em;
+  text-align: justify;
+}
+
+section img {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+}
+
+@media screen and (max-device-width: 480px) {
+  section {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=../css/homework.css.map */

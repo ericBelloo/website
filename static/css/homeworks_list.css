@@ -4,12 +4,12 @@
 /*
     Layouts
 */
-.dfc, .content, .document, .documents, .departmental, .btn-send, .about-me, section, .tab label, .tab, header, body {
+.dfc, .content, .document, .documents, .departmental, .btn-send, .about, section, .tab, footer, header, body {
   display: flex;
   align-items: center;
 }
 
-.jc, .document, .documents, .departmental, .btn-send, .about-me, .tab label, .tab, header {
+.jc, .document, .documents, .departmental, .btn-send, .about, .tab, header {
   justify-content: center;
 }
 
@@ -21,7 +21,7 @@
   flex-direction: row;
 }
 
-.clm, .content, .document, .departmental, .about-me, section, body {
+.clm, .content, .document, .departmental, .about, section, footer, body {
   flex-direction: column;
 }
 
@@ -49,23 +49,18 @@ header {
   background: #FDFEFE;
   border: 1px solid #abb2b9;
   border-radius: 15px;
+  margin: 10px 0px 50px 0px;
 }
 
-.tab label {
-  width: 33.33%;
-  height: 100%;
+.tab span {
   font-family: Arial;
   text-align: center;
   color: #34495e;
 }
 
-.tab label :hover {
-  background: #abb2b9;
-}
-
 @media screen and (max-device-width: 480px) {
   .tab {
-    width: 95%;
+    width: 60%;
     height: 40px;
   }
 }
@@ -80,7 +75,7 @@ section input[type="file"] {
   display: none;
 }
 
-.about-me {
+.about {
   width: 500px;
   height: auto;
   padding: 20px 0px;
@@ -89,16 +84,23 @@ section input[type="file"] {
   border-radius: 20px;
 }
 
-.about-me img {
+.about img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
 
-.about-me p {
+.about p {
   margin: 10px;
   font-family: arial;
   color: #34495e;
+}
+
+@media screen and (max-device-width: 480px) {
+  .about {
+    width: 90%;
+    height: auto;
+  }
 }
 
 .btn, .btn-send, .btn-close, .btn-about {
@@ -123,7 +125,9 @@ section input[type="file"] {
 .btn-close {
   width: 180px;
   height: 35px;
+  margin: 10px 0px;
   background-color: #e74c3c;
+  outline: none;
 }
 
 .btn-send {
@@ -133,6 +137,7 @@ section input[type="file"] {
   margin: 5px;
   font-family: Arial;
   text-align: center;
+  outline: none;
 }
 
 /*
@@ -154,10 +159,10 @@ label{
 }
 
 .line {
-  width: 80%;
-  height: auto;
-  margin: 2px;
-  border: solid 0.5px #abb2b9;
+  width: 70%;
+  height: 1px;
+  margin: 5px;
+  background-color: #abb2b9;
 }
 
 .departmental {
@@ -194,18 +199,22 @@ label{
 .content {
   width: 90%;
   height: auto;
+  min-height: 500px;
 }
 
-.content label {
-  width: 200px;
-  height: 20px;
-  background-color: #f8f9f9;
-  padding: 5px 5px;
-  border-radius: 15px;
-  font-size: 0.9em;
+.content span {
   font-family: Arial;
-  color: #566573;
-  margin: 10px 0px;
+  font-size: 1em;
+  color: #34495e;
+}
+
+.content span:hover {
+  cursor: pointer;
+}
+
+.content a {
+  margin: 10px;
+  text-decoration: none;
 }
 
 .swiper-container {
@@ -233,4 +242,4 @@ label{
   flex-direction: column;
 }
 
-/*# sourceMappingURL=../css/homeworks.css.map */
+/*# sourceMappingURL=../css/homeworks_list.css.map */

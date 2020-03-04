@@ -11,7 +11,7 @@
     <section>
         <form method="post" action="#">
             {% csrf_token %}
-            <input type="text" name="title" id="id_tittle" placeholder="Title">
+            <input type="text" name="title" id="id_title" placeholder="Title">
             <textarea class="new-content" placeholder="Content"></textarea>
         </form>
         <div>
@@ -22,6 +22,9 @@
             <input type="file" name="file" id="id_file" data-url="{% url 'home:save_image' %}" accept="image/*">
         </div>
         <button class="btn-save" id="btn_save">SAVE</button>
+        <div class="message dn">
+            <span class="message-error">save</span>
+        </div>
     </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

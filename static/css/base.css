@@ -4,12 +4,12 @@
 /*
     Layouts
 */
-.dfc {
+.dfc, .message {
   display: flex;
   align-items: center;
 }
 
-.jc {
+.jc, .message {
   justify-content: center;
 }
 
@@ -32,5 +32,24 @@
 /*
     mixin s
 */
+.message {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  bottom: 10px;
+  right: 0px;
+}
 
-/*# sourceMappingURL=../css/base.css.map */
+.message-success {
+  background-color: #d6eaf8;
+  font-size: 1em;
+  color: #85c1e9;
+  border-radius: 15px;
+}
+
+.message-error {
+  background-color: #f5b7b1;
+  font-size: 1em;
+  color: #ff948a;
+  border-radius: 15px;
+}

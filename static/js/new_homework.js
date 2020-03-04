@@ -12,10 +12,32 @@ $('#add_text').on('click', function(){
 // result <p>Content</p>
 $(document).on('click', '#btn_save', function(){
     let content = '';
-    $( '.new-content' ).each(function( index ) {
-        console.log($(this).type();
+    $( '.new-content' ).each(function( index, value ) {
+        if(value.nodeName == 'TEXTAREA'){
+            content += '<p>' + $(this).val() + '</p>';
+        }
+        if(value.nodeName == 'IMG'){
+            content += '<img src="'+ $(this).attr('src') + '" alt="image">';
+        }
     });
-    console.log(content);
+    let formData = new FormData();
+    formData.append('csrfmiddlewaretoken', $('input[name="csrfmiddlewaretoken"]').val());
+    formData.append('title', $('#id_title').val());
+    formData.append('content', content);
+    let request = $.ajax({
+        url: '/student',
+        type: 'POST',
+        data: formData,
+        processData: false,
+	    contentType: false,
+    });
+    request.done(function(data){
+        console.log(data.message);
+        window.location = data.url;
+    });
+    request.fail(function(error){
+        console.log(data.message);
+    });
 });
 
 //Send image
@@ -38,3 +60,5 @@ $('#id_file').on('change', function(){
         console.log('fail');
     });
 });
+
+

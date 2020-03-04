@@ -7,7 +7,7 @@ app_name = 'home'
 urlpatterns = [
     path('student', NewHomeworkView.as_view(), name='student'),
     path('teacher', HomeworkListView.as_view(), name='teacher'),
-    path('save_departmental', save_departmental, name='save_departmental'),
-    path('save_practice', save_practices, name='save_practices'),
+    path('homework/<int:id_document>', HomeworkView.as_view(), name='homework'),
     path('save_image', save_image, name='save_image'),
+    path('get_document/<int:pk>', get_document, name='get_document'),  # get content for each document
 ]

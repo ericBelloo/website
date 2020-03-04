@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import View, ListView
 from apps.model.models import Documents, Practices, Images
 # Create your views here.
@@ -13,26 +14,21 @@ class NewHomeworkView(View):
     def get(self, request, **kwargs):
         return render(request, self.template_name)
 
-
-def save_departmental(request):
-    files = request.FILES.getlist('file')
-    departmental = int(request.POST.get('departmental'))
-    for file in files:
-        document = Documents.objects.create(name=file.name, file=file, departmental=departmental)
-        document.save()
-    data['success'] = True
-    data['message'] = 'The information has been saved correctly'
-    return JsonResponse(data)
-
-
-def save_practices(request):
-    files = request.FILES.getlist('file')
-    for file in files:
-        document = Practices.objects.create(name=file.name, file=file)
-        document.save()
-    data['success'] = True
-    data['message'] = 'The information has been saved correctly'
-    return JsonResponse(data)
+    def post(self, request, **kwargs):
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        departmental = request.POST.get('departmental')
+        try:
+            document = Documents.objects.create(title=title, content=content, departmental=departmental)
+            document.save()
+            data['success'] = True
+            data['url'] = reverse('home:teacher')
+            data['message'] = 'Document saved'
+        except Exception as error:
+            data['success'] = True
+            data['message'] = 'Error saving'
+            data['error'] = error.args
+        return JsonResponse(data)
 
 
 def save_image(request):
@@ -45,15 +41,29 @@ def save_image(request):
     return JsonResponse(data)
 
 
-class HomeworkListView(View):
+class HomeworkListView(ListView):
     """
         Show documents, practices and the project
     """
     template_name = 'homeworks_list.html'
 
+    def get_queryset(self):
+        return Documents.objects.all().values('title', 'id')
+
+
+class HomeworkView(View):
+    template_name = 'homework.html'
+
     def get(self, request, **kwargs):
-        context['first_departmental'] = Documents.objects.filter(departmental=1).values('title', 'id')
-        context['second_departmental'] = Documents.objects.filter(departmental=2).values('title', 'id')
-        context['third_departmental'] = Documents.objects.filter(departmental=3).values('title', 'id')
+        document = Documents.objects.get(id=kwargs.get('id_document'))
+        context['id'] = document.id
+        context['title'] = document.title
         return render(request, self.template_name, context)
 
+
+def get_document(request, pk):
+    document = Documents.objects.get(id=pk)
+    data['success'] = True
+    data['message'] = 'The information has been saved correctly'
+    data['html'] = document.content
+    return JsonResponse(data)

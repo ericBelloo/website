@@ -4,12 +4,12 @@
 /*
     Layouts
 */
-.dfc, form, section {
+.dfc, .message, form, section {
   display: flex;
   align-items: center;
 }
 
-.jc {
+.jc, .message {
   justify-content: center;
 }
 
@@ -70,6 +70,12 @@ form textarea {
   resize: none;
 }
 
+form img {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+}
+
 @media screen and (max-device-width: 480px) {
   form {
     width: 90%;
@@ -120,4 +126,28 @@ input[type='file'] {
   outline: 0px;
 }
 
-/*# sourceMappingURL=../css/new_homework.css.map */
+.message {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 0px;
+}
+
+.message-success {
+  padding: 10px 50px;
+  background-color: #d6eaf8;
+  font-size: 1em;
+  font-family: Arial;
+  color: #5dade2;
+  border-radius: 15px;
+}
+
+.message-error {
+  padding: 10px 50px;
+  background-color: #fadbd8;
+  font-size: 1em;
+  font-family: Arial;
+  color: #ec7063;
+  border-radius: 15px;
+}

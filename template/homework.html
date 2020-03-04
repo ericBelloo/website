@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Aplicación de Redes</title>
+    <link href="{% static 'css/homework.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section data-url="{% url 'home:get_document' id %}">
+        <h1>{{ title }}</h1>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'js/homework.js' %}"></script>
+</html>

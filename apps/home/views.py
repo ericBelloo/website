@@ -55,9 +55,9 @@ class HomeworkView(View):
     template_name = 'homework.html'
 
     def get(self, request, **kwargs):
-        document = Documents.objects.get(id=kwargs.get('id_document'))
-        context['id'] = document.id
-        context['title'] = document.title
+        document = Documents.objects.values('id', 'title').get(id=kwargs.get('id_document'))
+        context['id'] = document['id']
+        context['title'] = document['title']
         return render(request, self.template_name, context)
 
 

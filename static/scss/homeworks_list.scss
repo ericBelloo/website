@@ -22,15 +22,14 @@ footer{
     background: $white;
     border: 1px solid $gray;
     border-radius: 15px;
-    margin: 10px 0px 50px 0px;
-
+    margin: 5px;
     span{
         font-family: Arial;
         text-align: center;
         color: $black;
     }
     @media screen and (max-device-width : 480px) {
-        @include size(60%, 40px);
+        @include size(90%, 40px);
     }
 }
 
@@ -40,6 +39,24 @@ section{
     margin: 10px 0px;
     input[type="file"]{
         display: none;
+    }
+}
+
+.search{
+    @include size(47%, 40px);
+    @extend .dfc, .jc, .row;
+    background: rgb(244, 246, 246);
+    border: 0px;
+    border-radius: 15px;
+    margin: 5px 0px 50px 0px;
+    padding: 0px 15px;
+    span{
+        font-family: Arial;
+        text-align: center;
+        color: $black;
+    }
+    @media screen and (max-device-width : 480px) {
+        @include size(82%, 40px);
     }
 }
 
@@ -99,17 +116,6 @@ section{
     text-align: center;
     outline:none;
 }
-
-/*
-label{
-    @include size(150px, 30px);
-    @extend .dfc, .jc, .btn;
-    background-color: $green;
-    margin: 5px;
-    font-family: Arial;
-    text-align: center;
-}
-*/
 
 .sub-tittle{
     @include size(100%, auto);
@@ -196,4 +202,13 @@ label{
         align-items: center;
         flex-direction: column;
     }
+}
+
+.notification{
+    @include size(90%, auto);
+    padding: 10px;
+    background-color: #f4f6f6;
+    font-size: 1em;
+    font-family: Arial;
+    border-radius: 15px;
 }

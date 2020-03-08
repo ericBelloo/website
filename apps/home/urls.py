@@ -10,4 +10,5 @@ urlpatterns = [
     path('homework/<int:id_document>', HomeworkView.as_view(), name='homework'),
     path('save_image', save_image, name='save_image'),
     path('get_document/<int:pk>', get_document, name='get_document'),  # get content for each document
+    path('get_document_list/<str:value>/', get_document_list, name='get_document_list'),
 ]

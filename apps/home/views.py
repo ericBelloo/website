@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
@@ -49,6 +50,24 @@ class HomeworkListView(ListView):
 
     def get_queryset(self):
         return Documents.objects.all().values('title', 'id')
+
+
+def get_document_list(request, value):
+    try:
+        if value == 'none':
+            homework_list = list(Documents.objects.all().values('title', 'id'))
+        else:
+            homework_list = list(Documents.objects.filter(title__icontains=value).values('title', 'id'))
+
+        data['success'] = True
+        data['list'] = homework_list
+        data['message'] = ''
+    except Exception as error:
+        data['success'] = False
+        data['list'] = ''
+        data['message'] = 'The document with that name does not exist'
+        data['error'] = error.args
+    return JsonResponse(data)
 
 
 class HomeworkView(View):

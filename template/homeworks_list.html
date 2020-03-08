@@ -21,13 +21,13 @@
         <div class="swiper-slide">
           <div class="tab">
               <span>Investigations</span>
-            </div>
-          <div class="content">
+          </div>
+          <input type="text" class="search" placeholder="search document" id="id_search_document">
+          <div class="content" id="id_content_document">
                 {% for object in object_list %}
                     <a href="{% url 'home:homework' object.id %}"><span class="content_element">{{ object.title }}</span></a>
                     <div class="line"></div>
                 {% endfor %}
-
           </div>
         </div>
         {# Practices #}

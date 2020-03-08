@@ -23,7 +23,7 @@ section{
     }
 
     img{
-        @include size(300px, 300px);
+        @include size(auto, 300px);
         border-radius: 15px;
     }
 

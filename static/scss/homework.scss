@@ -20,11 +20,15 @@ section{
         color: $black;
         font-size: 1em;
         text-align: justify;
+
     }
 
     img{
         @include size(auto, 300px);
         border-radius: 15px;
+        @media screen and (max-device-width: 480px) {
+            @include size(90%, 150px);
+        }
     }
 
     @media screen and (max-device-width: 480px) {

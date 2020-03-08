@@ -83,6 +83,7 @@ section input[type="file"] {
   border-radius: 15px;
   margin: 5px 0px 50px 0px;
   padding: 0px 15px;
+  outline: 0px;
 }
 
 .search span {

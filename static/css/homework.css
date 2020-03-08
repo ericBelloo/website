@@ -57,6 +57,13 @@ section img {
 }
 
 @media screen and (max-device-width: 480px) {
+  section img {
+    width: 90%;
+    height: 150px;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
   section {
     width: 90%;
     height: auto;
